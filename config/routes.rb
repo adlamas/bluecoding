@@ -7,4 +7,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  resources :urls, only: :create do
+    get :redirect, on: :collection
+    get :most_frequents, on: :collection
+  end
 end
